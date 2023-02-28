@@ -1,0 +1,31 @@
+import React, { Component } from 'react'
+export default class Counter extends Component {
+constructor() {
+    super()
+    this.state={ count:0}
+}
+handleIncrement=()=>{
+    this.setState({count: this.state.count + 1})
+}
+
+handleDecrement=()=>{
+    this.setState({count: this.state.count - 1})
+}
+
+Reset=()=>{
+    this.setState({count: 0})
+}
+
+
+  render() {
+    
+    return (
+      <div style={{borderColor:"green", padding:50, backgroundColor:"limegreen", borderBlockColor:"darkviolet"}}>
+        <h1>This is a  Counter Application</h1>
+        <h1 style={{color:"solid white",border:"solid blue", padding:25}}>{this.state.count}</h1>
+        <button style={{color:"black",border:"solid blue", padding:25}} onClick={this.handleIncrement}>Increment</button>
+        <button style={{color:"black",border:"solid red", padding:25}} onClick={this.handleDecrement} >Decrement</button>
+        <button style={{color:"black",border:"solid black", padding:25}} onClick={this.Reset}>Reset</button>
+      </div> 
+      ) }
+}
